@@ -29,8 +29,8 @@
                     </div>
                     <!-- /.box-body -->
                     <div class="box-footer">
-                        <input type="submit" class="btn btn-info pull-right" value="Import" />
-                        <a href="<?php echo site_url('santri') ?>" class="btn btn-default">Batal</a>
+                        <input type="submit" class="btn btn-info" value="Import" />
+                        <a href="<?php echo site_url('santri') ?>" class="btn btn-default pull-right">Batal</a>
                     </div>
                     <?php echo form_close(); ?>
                 </div>
