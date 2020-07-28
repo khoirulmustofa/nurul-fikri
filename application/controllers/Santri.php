@@ -149,7 +149,11 @@ class Santri extends CI_Controller
         $data['menu'] = "Master";
         $data['page'] = "Import Santri";
         $data['action'] = site_url('santri/import_excel');
+<<<<<<< HEAD
         $data['file_download'] = "upload/format_file/Import Santri.xlsx";
+=======
+        $data['file_download'] = "upload/format_file/Import_Santri.xlsx";
+>>>>>>> 199b6f8adbc1b158aa5850a688dd2de64294ff67
         $data['load_css_js'] = "";
 
         $this->template->load('template/main_template', 'view_import_excel', $data);
@@ -168,6 +172,7 @@ class Santri extends CI_Controller
             $spreadsheet = $reader->load($_FILES['upload_file']['tmp_name']);
             $sheetData = $spreadsheet->getActiveSheet()->toArray();
             $sheetCount = count($sheetData);
+<<<<<<< HEAD
             for ($i = 0; $i <= $sheetCount; $i++) {
                 if ($i > 0) {
                     $data['siswa_id'] = insert_uuid();
@@ -184,6 +189,22 @@ class Santri extends CI_Controller
             }
             $this->session->set_flashdata('success_message', 'Data Pengguna Berhasil di Import');
             redirect(site_url('users'));
+=======
+            foreach ($sheetData as $datas) {
+                $data['siswa_id'] = insert_uuid();
+                    $data['siswa_NIS'] = $datas[1];
+                    $data['siswa_NISN'] = $datas[2];
+                    $data['siswa_nama_lengkap'] = $datas[3];
+                    $data['kelas_id'] = $datas[4];
+                    $data['asrama_id'] = $datas[5];
+                    $data['mushrif_tahfidz_id'] = $datas[6];
+                    $data['user_id_telegram'] = $datas[7];
+                    $data['siswa_status'] = $datas[8];
+                    $this->Santri_model->insert_santri($data);
+            }
+            $this->session->set_flashdata('success_message', 'Data Santri Berhasil di Import');
+            redirect(site_url('santri'));
+>>>>>>> 199b6f8adbc1b158aa5850a688dd2de64294ff67
         }
     }
 }

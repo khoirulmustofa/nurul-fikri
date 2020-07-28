@@ -20,6 +20,7 @@
                     <?php echo form_open_multipart($action, array('name' => 'spreadsheet')); ?>
                     <div class="box-body">
                         <div class="form-group">
+<<<<<<< HEAD
                             <label>Pilih File</label>
                             <input type="file" name="upload_file" />
                             <p class="help-block"><?php echo form_error('name'); ?></p>
@@ -31,6 +32,19 @@
 
                     <div class="box-footer">
                         <input type="submit" value="Import" />
+=======
+                            <p class="help-block">Download Format File <a href="<?php echo site_url($file_download) ?>" class="btn btn-success btn-sm"><i class="fa fa-fw fa-cloud-download"></i> DI SINI</a></p>
+                            <hr>
+                            <label>Pilih File</label>
+                            <input type="file" name="upload_file" />
+                            <p class="help-block"><?php echo form_error('name'); ?></p>
+                        </div>
+                    </div>
+                    <!-- /.box-body -->
+                    <div class="box-footer">
+                        <input type="submit" class="btn btn-info" value="Import" />
+                        <a href="<?php echo site_url('santri') ?>" class="btn btn-default pull-right">Batal</a>
+>>>>>>> 199b6f8adbc1b158aa5850a688dd2de64294ff67
                     </div>
                     <?php echo form_close(); ?>
                 </div>

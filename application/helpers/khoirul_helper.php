@@ -1,6 +1,10 @@
 <?php
 
+<<<<<<< HEAD
 define("BOT_TOKEN", "1307872209:AAEJ_U_NkPD1vMHN5saCXrKz3gZL0oRaw2Y");
+=======
+define("BOT_TOKEN", "");
+>>>>>>> 199b6f8adbc1b158aa5850a688dd2de64294ff67
  
 function kirimTelegram($chat_id,$pesan) {
    // $pesan = json_encode($pesan);
